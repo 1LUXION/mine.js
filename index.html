@@ -18,7 +18,7 @@
 <div class="window has-menu mine-window">
     <div class="title-bar">
         <div class="title-icon"></div>
-        <div class="title">Minesweeper</div>
+        <div class="title">지뢰찾기</div>
         <div class="title-button-group">
             <div class="title-button minimize"></div>
             <div class="title-button maximize disabled"></div>
@@ -26,10 +26,17 @@
         </div>
     </div>
     <ul class="menu-bar">
-    <li onclick="minefield.init_board(30, 16, 99)">Hard</li>
-    <li onclick="minefield.init_board(30, 16, 120, 2)">Harder</li>
-    <li><a href="https://github.com/egraether/mine3D">Hardest</a></li>
-    <li><a href="https://github.com/klutzy/mine.js">About...</a></li>
+    <li onclick="minefield.init_board(30, 16, 99)">어려운</li>
+    <li onclick="minefield.init_board(30, 16, 150, 2)">더 어려운</li>
+    <li onclick="minefield.init_board(30, 16, 200, 3)">정말 어려운</li>
+    <li onclick="minefield.init_board(30, 16, 250, 4)">아주 어려운</li>
+    <li onclick="
+        var c = prompt('지뢰의 개수를 입력하세요(1~480)');
+        var d = prompt('칸당 최대 지뢰의 개수를 입력하세요(1~4)');
+        c = Math.min(Math.max(1,c),480);
+        d = Math.min(Math.max(1,d),4);
+    minefield.init_board(30, 16, c, d)">사용자 정의</a></li>
+    <li><a href="https://github.com/klutzy/mine.js">프로그램 정보</a></li>
     </ul>
 
     <div class="window-content">
