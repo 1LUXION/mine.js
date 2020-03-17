@@ -4,10 +4,10 @@ $.widget( "mswin.window", {
     _create: function() {
         var _this = this;
         this.taskbar = $( ".taskbar" );  // TODO: specify as an argument
-        this.element.resizable({
-            handles: "all",
-            alsoResize: this.element.find( ".window-content" ),
-        });
+        // this.element.resizable({
+        //     handles: "all",
+        //     alsoResize: this.element.find( ".window-content" ),
+        // });
         this.element.draggable({
             handle: ".title",
             start: function( event ) {

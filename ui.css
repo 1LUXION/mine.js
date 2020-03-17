@@ -1,0 +1,47 @@
+.menu-modal {
+  position: fixed;
+  width: 100000px;
+  height: 100000px;
+  top: -50000px;
+  left: -50000px;
+  z-index: 9999;
+  display: none;
+}
+
+.menu-bar li.optionBtn {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 38px;
+  height: 18px;
+  padding-right: 0 !important;
+}
+
+.subMenu {
+  position: absolute;
+  list-style: none;
+  width: 125px;
+  height: 165px;
+  z-index: 10000;
+  background: #c0c0c0;
+  -webkit-box-shadow: inset 1px 1px 0 0 #dfdfdf, inset -1px -1px 0 0 black, inset 1px 1px 0 1px white, inset -1px -1px 0 1px gray;
+          box-shadow: inset 1px 1px 0 0 #dfdfdf, inset -1px -1px 0 0 black, inset 1px 1px 0 1px white, inset -1px -1px 0 1px gray;
+  left: 0;
+  top: 40px;
+  display: none;
+}
+
+.subMenu div {
+  height: 23px;
+  line-height: 23px;
+  text-indent: 20px;
+}
+
+.subMenu div:hover {
+  background: #000080;
+  color: #fff;
+}
+
+.subMenu div:first-child {
+  margin-top: 2px;
+}
+/*# sourceMappingURL=ui.css.map */

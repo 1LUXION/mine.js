@@ -8,13 +8,12 @@
 <link href="mine.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="win98.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="mine-win98.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="ui.css" media="screen" rel="stylesheet" type="text/css" />
 
 </head>
 
 <body>
-
 <div class="windows windows-98">
-
 <div class="window has-menu mine-window">
     <div class="title-bar">
         <div class="title-icon"></div>
@@ -26,19 +25,19 @@
         </div>
     </div>
     <ul class="menu-bar">
-    <li onclick="minefield.init_board(30, 16, 99)">어려운</li>
-    <li onclick="minefield.init_board(30, 16, 150, 2)">더 어려운</li>
-    <li onclick="minefield.init_board(30, 16, 200, 3)">정말 어려운</li>
-    <li onclick="minefield.init_board(30, 16, 250, 4)">아주 어려운</li>
-    <li onclick="
-        var c = prompt('지뢰의 개수를 입력하세요(1~480)');
-        var d = prompt('칸당 최대 지뢰의 개수를 입력하세요(1~4)');
-        c = Math.min(Math.max(1,c),480);
-        d = Math.min(Math.max(1,d),4);
-    minefield.init_board(30, 16, c, d)">사용자 정의</a></li>
-    <li><a href="https://github.com/klutzy/mine.js">프로그램 정보</a></li>
+        <li class="optionBtn">옵션</li>
+        <li><a href="https://github.com/sinseiki/mine.js" target="_blank">도움말</a></li>
     </ul>
-
+    <div class="menu-modal"></div>
+    <div class="subMenu">
+        <div onclick="mineWindowUIResize(9, 9, 10, 1)">초급</div>
+        <div onclick="mineWindowUIResize(16, 16, 40, 1)">중급</div>
+        <div onclick="mineWindowUIResize(30, 16, 99, 1)">고급</div>
+        <div onclick="mineWindowUIResize(30, 16, 130, 2)">초고급</div>
+        <div onclick="mineWindowUIResize(30, 16, 165, 3)">지고급</div>
+        <div onclick="mineWindowUIResize(30, 16, 200, 4)">최고급</div>
+        <div class="userInterface">사용자 정의</a></div>
+    </div>
     <div class="window-content">
     <div class="mine-head-area">
         <div class="mine-counter">
@@ -69,90 +68,7 @@
 <script src="jquery.mswin.listview.js"></script>
 <script src="jquery.mswin.menu.js"></script>
 <script src="mine.js"></script>
-
-<script>
-$('.window').window();
-$('.listview').listview();
-$('.desktop-listview').listview();
-$('.menu-bar').menubar();
-$('.taskbar ul.start').menubar({
-    position_toplevel: {
-        my: "left bottom",
-        at: "left top",
-    },
-});
-
-var update_counter = null;
-var update_timer = null;
-
-var timer_val = 0;
-var timer_id = null;
-
-var mine_area = document.getElementById("mine-area");
-var minefield = new window.Minefield(mine_area, function(status) {
-    var smile = $(".mine-reset-button .mine-reset-button-inner");
-    var bg_pos = "0 0";
-    if (status === -1) {
-        bg_pos = "-17px 0";
-    }
-    if (status === -2) {
-        bg_pos = "-51px 0";
-    }
-    smile.css({
-        "background-position": bg_pos,
-    });
-
-    if (status === 0) {
-        timer_id = window.setInterval(update_timer, 1 * 1000);
-    }
-    if (status < 0 || status === 1) {
-        window.clearInterval(timer_id);
-        if (status === 1) {
-            var num_counter = minefield.num_mines - minefield.num_flags;
-            var counter_obj = $(".mine-counter");
-            update_counter(num_counter, counter_obj);
-
-            timer_val = 0;
-            timer_id = null;
-            var timer_obj = $(".mine-timer");
-            update_counter(0, timer_obj);
-        }
-    }
-});
-
-update_timer = function() {
-    timer_val += 1;
-    var timer_obj = $(".mine-timer");
-    update_counter(timer_val, timer_obj);
-}
-
-update_counter = function(val, counter) {
-    if (val > 999) {
-        val = 999;
-    }
-    if (val < 0) {
-        val = 0;
-    }
-    var digits = [
-        Math.floor(val / 100),
-        Math.floor(val / 10) % 10,
-        val % 10
-    ];
-    for (var i = 0; i < 3; i++) {
-        var d = digits[i];
-        var child = $(counter.children()[i]);
-        child.removeClass();
-        child.addClass("digit digit-" + d);
-    }
-};
-minefield.on_rclick_func = function(x, y) {
-    var num_counter = minefield.num_mines - minefield.num_flags;
-    var counter_obj = $(".mine-counter");
-    update_counter(num_counter, counter_obj);
-};
-
-minefield.init_board(30, 16, 120, 2);
-</script>
+<script src="main.js"></script>
 
 </body>
 

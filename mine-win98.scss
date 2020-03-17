@@ -2,9 +2,8 @@
     width: 502px;
     height: 363px;
     position: absolute;
-    top: 0;
-    left: auto;
-    right: auto;
+    left: 50%;
+    transform:translate(-50%,0)
 
 }
 .window-content .mine-head-area {
@@ -59,7 +58,8 @@
         height: 17px;
         padding: 2px;
         top: 8px;
-        left: 225px;
+        left: 50%;
+        margin-left:-8.5px;
         &:active {
             border-top: 2px solid gray;
             border-left: 2px solid gray;
