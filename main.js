@@ -42,9 +42,12 @@ var minefield = new window.Minefield(mine_area, function (status) {
     }
 });
 update_timer = function () {
-    timer_val += 1;
+    timer_val++;
     var timer_obj = $(".mine-timer");
     update_counter(timer_val, timer_obj);
+    if (timer_val === 999) {
+        clearInterval(timer_id);
+    }
 };
 update_counter = function (val, counter) {
     // if (val > 999) {
@@ -87,10 +90,13 @@ update_counter = function (val, counter) {
     }
 };
 minefield.on_rclick_func = function (x, y) {
+    mineCounter(x, y);
+};
+function mineCounter(x, y) {
     var num_counter = minefield.num_mines - minefield.num_flags;
     var counter_obj = $(".mine-counter");
     update_counter(num_counter, counter_obj);
-};
+}
 minefield.init_board(30, 16, 99);
 (function mineWindowUI() {
     document.querySelector('.userInterface').addEventListener('click', function () {
@@ -135,5 +141,20 @@ function mineWindowUIResize(a, b, c, d) {
         document.querySelector('.subMenu').style.display = 'none';
         document.querySelector('.menu-modal').style.display = 'none';
         $('.optionBtn').css({ border: 'none' });
+    });
+})();
+(function flagtoggleModule() {
+    document.querySelector('.mine-toggle-button').addEventListener('click', function () {
+        if (!(this.classList.contains('flagmode'))) {
+            this.classList.add('flagmode');
+            this.firstElementChild.style.backgroundSize = '1300%';
+            this.firstElementChild.style.backgroundPosition = '-30px -30px';
+        }
+        else {
+            this.classList.remove('flagmode');
+            this.firstElementChild.style.backgroundSize = '1250%';
+            this.firstElementChild.style.backgroundPosition = '-29px -3px';
+        }
+        event.preventDefault;
     });
 })();

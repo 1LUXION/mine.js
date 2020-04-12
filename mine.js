@@ -171,29 +171,50 @@
       return ret;
     };
 
-    Minefield.prototype.on_click = function(x, y) {
-      var old_game_status;
+    
+      Minefield.prototype.on_click = function(x, y) {
+        if(!(document.querySelector('.mine-toggle-button').classList.contains('flagmode'))){
+          var old_game_status;
 
-      old_game_status = this.game_status;
-      if (this.game_status < 0) {
-        return;
-      }
-      if (this.game_status === 1) {
-        this.start(x, y);
-      }
-      if (this.expand(x, y) < 0) {
-        this.gameover(x, y);
-      }
-      if (this.remaining === 0) {
-        this.gameclear();
-      }
-      if (this.on_click_func) {
-        this.on_click_func(x, y);
-      }
-      if (old_game_status !== this.game_status) {
-        return this.on_game_status_changed();
-      }
-    };
+          old_game_status = this.game_status;
+          if (this.game_status < 0) {
+            return;
+          }
+          if (this.game_status === 1) {
+            this.start(x, y);
+          }
+          if (this.expand(x, y) < 0) {
+            this.gameover(x, y);
+          }
+          if (this.remaining === 0) {
+            this.gameclear();
+          }
+          if (this.on_click_func) {
+            this.on_click_func(x, y);
+          }
+          if (old_game_status !== this.game_status) {
+            return this.on_game_status_changed();
+          }
+        } else {
+          var old_game_status;
+
+          old_game_status = this.game_status;
+          if (this.game_status < 0) {
+            return;
+          }
+          if (this.game_status === 1) {
+            this.game_status = 0;
+          }
+          this.flag(x, y);
+          if (this.on_click_func) {
+            this.on_click_func(x, y);
+          }
+          if (old_game_status !== this.game_status) {
+            return this.on_game_status_changed();
+          }
+          mineCounter(x,y);
+      };
+    }
 
     Minefield.prototype.on_rclick = function(x, y) {
       var old_game_status;

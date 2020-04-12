@@ -105,9 +105,11 @@
   width: 17px;
   height: 17px;
   padding: 2px;
-  top: 8px;
+  top: 7px;
   left: 50%;
   margin-left: -8.5px;
+  -webkit-transform: translateX(-70%);
+          transform: translateX(-70%);
 }
 
 .window-content .mine-head-area .mine-reset-button:active {
@@ -120,8 +122,41 @@
 .window-content .mine-head-area .mine-reset-button .mine-reset-button-inner {
   width: 17px;
   height: 17px;
-  background-image: url(face.png);
-  background-position: 0 0;
+  background: url(face.png);
+}
+
+.window-content .mine-head-area .mine-toggle-button {
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-bottom: 2px solid gray;
+  border-right: 2px solid gray;
+  position: absolute;
+  -webkit-transform: translateX(35%);
+          transform: translateX(35%);
+  width: 21px;
+  height: 21px;
+  top: 7px;
+  left: 50%;
+  margin-left: -8.5px;
+}
+
+.window-content .mine-head-area .mine-toggle-button:active {
+  border-top: 2px solid gray;
+  border-left: 2px solid gray;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.window-content .mine-head-area .mine-toggle-button .mine-toggle-button-inner {
+  font-family: 'FontAwesome';
+  float: left;
+  text-align: left;
+  position: relative;
+  background-image: url(mine.png);
+  background-position: -29px -3px;
+  background-size: 1250%;
+  width: 21px;
+  height: 21px;
 }
 
 .window-content .mine-area {
