@@ -2,14 +2,14 @@
 <html>
 
 <head>
-<title>지뢰찾기</title>
+<title>Minesweeper</title>
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=0.8" />
-<link href="mine.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="win98.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="mine-win98.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="ui.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../mine.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../win98.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../mine-win98.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../ui.css" media="screen" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -18,7 +18,7 @@
 <div class="window has-menu mine-window">
     <div class="title-bar">
         <div class="title-icon"></div>
-        <div class="title">지뢰찾기</div>
+        <div class="title">Minesweeper</div>
         <div class="title-button-group">
             <div class="title-button minimize"></div>
             <div class="title-button maximize disabled"></div>
@@ -26,18 +26,18 @@
         </div>
     </div>
     <ul class="menu-bar">
-        <li class="optionBtn">옵션</li>
-        <li><a href="https://github.com/sinseiki/mine.js" target="_blank">도움말</a></li>
+        <li class="optionBtn" style="width:53px">Option</li>
+        <li><a href="https://github.com/sinseiki/mine.js" target="_blank">Help</a></li>
     </ul>
     <div class="menu-modal"></div>
     <div class="subMenu">
-        <div onclick="mineWindowUIResize(9, 9, 10, 1)">초급</div>
-        <div onclick="mineWindowUIResize(16, 16, 40, 1)">중급</div>
-        <div onclick="mineWindowUIResize(30, 16, 99, 1)">고급</div>
-        <div onclick="mineWindowUIResize(30, 16, 135, 2)">초고급</div>
-        <div onclick="mineWindowUIResize(30, 16, 185, 3)">지고급</div>
-        <div onclick="mineWindowUIResize(30, 16, 250, 4)">최고급</div>
-        <div class="userInterface">사용자 정의</a></div>
+        <div onclick="mineWindowUIResize(9, 9, 10, 1)">Easy</div>
+        <div onclick="mineWindowUIResize(16, 16, 40, 1)">Normal</div>
+        <div onclick="mineWindowUIResize(30, 16, 99, 1)">Hard</div>
+        <div onclick="mineWindowUIResize(30, 16, 135, 2)">Harder</div>
+        <div onclick="mineWindowUIResize(30, 16, 185, 3)">Much Harder</div>
+        <div onclick="mineWindowUIResize(30, 16, 250, 4)">Hardest</div>
+        <div class="userInterface">Custom Setting</a></div>
     </div>
     <div class="window-content">
     <div class="mine-head-area">
@@ -66,13 +66,13 @@
 </div>
 
 
-<script src="vendor/jquery.min.js"></script>
-<script src="vendor/jquery-ui.min.js"></script>
-<script src="jquery.mswin.js"></script>
-<script src="jquery.mswin.listview.js"></script>
-<script src="jquery.mswin.menu.js"></script>
-<script src="mine.js"></script>
-<script src="main.js"></script>
+<script src="../vendor/jquery.min.js"></script>
+<script src="../vendor/jquery-ui.min.js"></script>
+<script src="../jquery.mswin.js"></script>
+<script src="../jquery.mswin.listview.js"></script>
+<script src="../jquery.mswin.menu.js"></script>
+<script src="../mine.js"></script>
+<script src="../main.js"></script>
 
 </body>
 
