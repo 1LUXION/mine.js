@@ -107,12 +107,12 @@ function mineWindowUIResize(a, b, c, d) {
     if (!a) {
         a = Number(prompt('가로 칸 수를 입력하세요(9~110)'));
         b = Number(prompt('세로 줄 수를 입력하세요(9~50)'));
-        c = Number(prompt('지뢰의 개수를 입력하세요'));
         d = Number(prompt('칸당 최대 지뢰의 개수를 입력하세요(1~4)'));
+        c = Number(prompt('지뢰의 총 개수를 입력하세요'));
         a = Math.min(Math.max(9, a), 110);
         b = Math.min(Math.max(9, b), 50);
-        c = Math.min(Math.max(1, c), a * b);
         d = Math.min(Math.max(1, d), 4);
+        c = Math.min(Math.max(10, c), ((a * b) - (10 * d)) * d);
     }
     minefield.init_board(a, b, c, d);
     document.querySelector('.mine-head-area').style.width = String(16 * a + 2) + 'px';
