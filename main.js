@@ -115,7 +115,6 @@ function mineWindowUIResize(a, b, c, d) {
         c = Math.min(Math.max(10, c), ((a * b) - (10 * d)) * d);
     }
     minefield.init_board(a, b, c, d);
-    document.querySelector('.mine-head-area').style.width = String(16 * a + 2) + 'px';
     document.querySelector('.mine-window').style.width = String(16 * a + 22) + 'px';
     document.querySelector('.mine-window').style.height = String(16 * b + 107) + 'px';
     document.querySelector('.mine-area').style.width = String(16 * a) + 'px';

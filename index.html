@@ -13,16 +13,14 @@
 
 </head>
 
-<body style="background:#000">
+<body style="background:#c0c0c0">
 <div class="windows windows-98">
 <div class="window has-menu mine-window">
-    <div class="title-bar">
-        <div class="title-icon"></div>
-        <div class="title">지뢰찾기 (mine.js)</div>
+    <div class="title-bar" style="height:0">
     </div>
     <ul class="menu-bar">
         <li class="optionBtn">옵션</li>
-        <li><a href="https://github.com/sinseiki/mine.js" target="_blank">도움말</a></li>
+        <li><a onclick="window.open('https://github.com/sinseiki/mine.js')">도움말</a></li>
     </ul>
     <div class="menu-modal"></div>
     <div class="subMenu">
@@ -35,7 +33,9 @@
         <div class="userInterface">사용자 정의</a></div>
     </div>
     <div class="window-content">
-    <div class="mine-head-area">
+    <div id="mine-area" class="mine-area" id="ma">
+    </div>
+    <div class="mine-head-area" id="mha">
         <div class="mine-counter">
             <div class="digit digit-0"></div>
             <div class="digit digit-0"></div>
@@ -53,12 +53,12 @@
             <div class="digit digit-0"></div>
         </div>
     </div>
-    <div id="mine-area" class="mine-area">
     </div>
-    </div>
+    
 </div>
 
 </div>
+
 
 
 <script src="vendor/jquery.min.js"></script>

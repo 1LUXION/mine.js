@@ -1230,3 +1230,17 @@ body {
                 color: #551A8B; }
               .windows-98 .office.word > .window-content > .stretch > .ruler-wrapper > .content-wrapper > .content a:active {
                 color: #FF0000; }
+
+              .windows-98 .window:before{box-shadow:none}
+              .menu-bar{right:-195px;position:absolute}
+              .windows-98 ul.menu-bar > li{float:none;margin:5px 2px;width:50px}
+
+              .windows{position:static;width:600px;height:270px;margin:0 auto;transform:scale(1.15) translate(2.5%,5%)}
+              .windows .has-menu{margin-left:-50px;height:270px}
+              .windows-98 ul.menu-bar{width:200px;}
+              .windows-98 .subMenu{left:auto;right:-50px;transform:translateY(-7%);width:100px}
+              #mha{float:right;width:60px;position:absolute;top:60px;right:-65px;height:200px;}
+              #mha .mine-counter{left:10px;top:60px}
+              #mha .mine-reset-button{left:43px;top:20px}
+              #mha .mine-toggle-button{left:17px;top:100px;position:absolute}
+              #mha .mine-timer{left:10px;top:150px}
